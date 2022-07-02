@@ -100,3 +100,7 @@ a partir do composer.lock usando o comando:
     the current directory, processes it, and downloads and installs all the
     libraries and dependencies outlined in that file. If the file does not
     exist it will look for composer.json and do the same.
+
+---------------------------------------------------------------------
+O caret (^) antes do número da versão da dependência significa que o Composer
+pode colocar composer.lock versões superiores às mencionadas no composer.json.
