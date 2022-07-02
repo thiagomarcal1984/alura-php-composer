@@ -1,0 +1,12 @@
+{
+    "name": "thiagomarcal1984/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Thiago Marçal",
+            "email": "thiagomarcal1984@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,58 @@
+Para iniciar a configuração das dependências pro composer, rode:
+    composer init
+
+Package name: nome do distribuidor seguido do nome do pacote em si.
+    Package name (<vendor>/<name>) [thiago/buscador-cursos-alura]: 
+            thiagomarcal1984/buscador-cursos
+
+Description: descrição resumida do pacote.
+    Description []: 
+            Projeto que busca os cursos no site da Alura.
+
+Author: nome do autor do pacote (geralmente é obtido do repositório git)
+    Author [Thiago Marçal <thiagomarcal1984@gmail.com>, n to skip]: 
+            <Enter>
+
+Minimum Stability []: informa qual a estabilidade aceitável das dependências 
+    que serão baixadas.
+    
+    Minimum Stability []:
+            <Enter>
+
+Package Type: especifica um dos seguintes tipos de pacote:
+        * library: biblioteca que vai ser reusada (é o default);
+        * project: projeto completo, auto-executável;
+        * metapackage: projeto vazio, esqueleto para outros projetos.
+        * composer-plugin: plugins próprios pro composer (tipo Maven, eu acho).
+
+    Package Type (e.g. library, project, metapackage, composer-plugin) []: 
+            library
+
+License: define o tipo de licença do pacote (Apache, MIT etc)
+    License []: 
+            <Enter>
+
+Definir as dependências: se você souber as dependências, você pode informá-las,
+    conforme padrão do nome do pacote (vendor/package). Não vamos informar.
+ 
+    Would you like to define your dependencies (require) interactively [yes]? 
+            n
+
+Definir dependências de desenvolvedor: idem item anterior, mas focado nas 
+    ferramentas de desenvolvimento (ferramentas de teste etc.).
+
+    Would you like to define your dependencies (require) interactively [yes]? 
+            n
+
+Autoload mapping: não explicado no curso. Mas mapeia namespaces a pastas.
+    Add PSR-4 autoload mapping? Maps namespace "Thiagomarcal1984\BuscadorCursos"
+    to the entered relative path. [src/, n to skip]:
+            n
+
+
+Em seguida é gerado o JSON do composer. Solicita-se confirmação do arquivo.
+    Do you confirm generation [yes]? 
+            <Enter>
+
+
+Curiosidade: o composer.json pode ser vazio, contendo apenas as chaves{}!

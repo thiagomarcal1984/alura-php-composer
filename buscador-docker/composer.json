@@ -1,0 +1,18 @@
+/* 
+    Criado com o seguinte comando: 
+        docker run 
+            --rm -it -w /app 
+            -v "D:\alura\php-composer\buscador-docker:/app" 
+            
+            composer init
+ */
+{
+    "name": "thiago/docker",
+    "authors": [
+        {
+            "name": "Thiago mMarçal",
+            "email": "tma@cdtn.br"
+        }
+    ],
+    "require": {}
+}

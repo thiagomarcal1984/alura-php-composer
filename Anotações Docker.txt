@@ -1,0 +1,35 @@
+Usando o Composer do Docker (imprimindo a versão do Composer):
+    docker run --rm composer --version
+
+        docker # Comando do docker
+            run # Executa o container.
+                --rm # Apaga o container após a execução.
+                --volume #
+            composer # Imagem usado (no caso, o Composer)
+                --version # O comando composer está implícito: composer --version
+
+Iniciando o composer.json com Docker:
+    docker run --rm -it -w /app 
+        -v "D:\alura\php-composer\buscador-docker:/app" composer init
+    ou
+    docker run --rm -it -v "Get-Location:/app" -w /app composer init
+    ou
+    docker run --rm --interactive --tty --volume "Get-Location:/app" 
+        --workdir /app composer init
+    
+        run 
+            --rm            # Remove o container após a conclusão do comando.
+            -i ou --interactive # mantém o terminal aberto.
+            -t ou --tty     # pseudo-Tele Type Writer, conecta com stdin e stdout.
+            -v ou --volume  # Define o volume associado a um caminho. Prefira
+                              caminhos absolutos aos comandos abaixo:  
+                Get-Location (PowerShell) 
+                    ou %cd% (Windows Prompt)
+                    ou ${PWD} (Linux)
+                            # Diretório atual do host (Powershell ou WinPrompt)
+                :           # Separa o caminho local do  caminho do container.
+                /app        #  Diretório do container
+            -w ou --workdir # Define o diretório atual do container.
+        composer 
+            init            # Parâmetro do comando implícito composer: composer init
+
