@@ -1,8 +1,6 @@
 <?php
 
 require 'vendor/autoload.php';
-// O Composer não carrega os namespaces criados pelo desenvolvedor.
-require 'src/Buscador.php'; 
 
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;

@@ -114,3 +114,16 @@ Basicamente a PSR pede que o namespace siga o padrão Vendor\Caminho\Para\Classe
 A parte do Vendor no namespace pode corresponder a qualquer diretório.
 Cada parte depois do Vendor (exceto a última) deve corresponder a um diretório.
 A última parte do namespace deve corresponder à classe e ao nome do arquivo PHP.
+
+Para que os arquivos criados pelo desenvolvedor sejam importados, modifique o 
+composer.json incluindo o seguinte código:
+
+    "autoload": {
+        "psr-4": {
+            "Caminho\\Do\\Vendor\\" : "diretorio_raiz/"
+        }
+    }
+
+O Composer só vai conhecer as configurações de PSR-4 novas depois que o
+seguinte comando for executado:
+    composer dumpautoload
