@@ -104,3 +104,13 @@ a partir do composer.lock usando o comando:
 ---------------------------------------------------------------------
 O caret (^) antes do número da versão da dependência significa que o Composer
 pode colocar composer.lock versões superiores às mencionadas no composer.json.
+
+---------------------------------------------------------------------
+PHP Standards Recommendation (PSR) são recomendações criadas pelo PHP-FIG
+(PHP Framework Interop Group). A PSR-4 fala sobre autoloaders em PHP:
+https://www.php-fig.org/psr/psr-4/
+
+Basicamente a PSR pede que o namespace siga o padrão Vendor\Caminho\Para\Classe.
+A parte do Vendor no namespace pode corresponder a qualquer diretório.
+Cada parte depois do Vendor (exceto a última) deve corresponder a um diretório.
+A última parte do namespace deve corresponder à classe e ao nome do arquivo PHP.
