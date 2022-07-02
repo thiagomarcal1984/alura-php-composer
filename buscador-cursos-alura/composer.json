@@ -8,5 +8,7 @@
             "email": "thiagomarcal1984@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
 }

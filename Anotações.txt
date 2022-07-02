@@ -56,3 +56,47 @@ Em seguida é gerado o JSON do composer. Solicita-se confirmação do arquivo.
 
 
 Curiosidade: o composer.json pode ser vazio, contendo apenas as chaves{}!
+
+---------------------------------------------------------------------
+Você pode consultar os packages disponíveis para Composer no site Packagist:
+https://packagist.org/
+
+Assim como no Maven,  o Packagist não é o único repositório de packages que
+existe para Composer.
+
+---------------------------------------------------------------------
+
+Para instalar uma dependência (inseri-la no JSON), use o seguinte comando:
+    composer require <vendor/package>
+
+3 alterações são feitas:
+    1) A pasta vendor é criada/atualizada e nela são guardadas as dependências;
+    2) O arquivo composer.json é modificado (recebe a dependência);
+    3) É criado um arquivo composer.lock, que contém as referências a todas as 
+       dependências instaladas (não só as que estão em composer.json).
+
+Obs.: arquivo JSON NÃO permitem comentários, como no JavaScript.
+
+Se você for editar o composer.json diretamente, você precisa atualizar o 
+arquivo composer.lock através do comando:
+    composer update
+
+    Descrição:  Updates your dependencies to the latest version according to
+                composer.json, and updates the composer.lock file.        
+    Help:
+    The update command reads the composer.json file from the
+    current directory, processes it, and updates, removes or installs all the
+    dependencies.
+
+Depois que o composer.lock for atualizado, você pode baixar as dependências
+a partir do composer.lock usando o comando:
+    composer install
+
+    Descrição:  Installs the project dependencies from the composer.lock file 
+                if present, or falls back on the composer.json.
+
+    Help:
+    The install command reads the composer.lock file from
+    the current directory, processes it, and downloads and installs all the
+    libraries and dependencies outlined in that file. If the file does not
+    exist it will look for composer.json and do the same.
