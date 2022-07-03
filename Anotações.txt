@@ -171,3 +171,6 @@ Quando você for instalar as dependências em produção, use o parâmetro no-de
 As dependências do composer guarda seus executáveis na pasta vendors\bin. Por 
 exemplo, para mostrar a versão do PHPUnit instalada pelo Composer:
     vendor\bin\phpunit --version
+
+Exemplo para rodar um teste unitário que está na pasta tests:
+    vendor\bin\phpunit tests\StackTest.php
