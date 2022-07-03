@@ -174,3 +174,9 @@ exemplo, para mostrar a versão do PHPUnit instalada pelo Composer:
 
 Exemplo para rodar um teste unitário que está na pasta tests:
     vendor\bin\phpunit tests\StackTest.php
+
+Uma ferramenta recomendada pelo curso é o PHP Code Sniffer (phpcs). 
+Por exemplo, para avaliar se um arquivo PHP segue a PSR-12, use o comando:
+    vendor\bin\phpcs --standard=PSR12 src
+
+O arquivo Buscador.php foi alterado para atender à PSR-12.
