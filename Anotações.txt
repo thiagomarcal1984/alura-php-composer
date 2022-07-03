@@ -158,3 +158,16 @@ Em resumo, o grupo autoload no composer.json tem 3 listas:
     Classmap e Files facilitam a importação de classes e funções e são úteis
     para importar código de projetos legados. Em files as classes são carregadas
     mesmo que não sejam usadas, já em classmap o carregamento é sob demanda.
+
+
+Se colocarmos o parâmetro dev no comando require, a dependência será instalada
+para uso apenas no ambiente de desenvolvimento. Código pra instalar o PHPUnit:
+
+    composer require --dev phpunit/phpunit
+
+Quando você for instalar as dependências em produção, use o parâmetro no-dev:
+    composer install --no-dev
+
+As dependências do composer guarda seus executáveis na pasta vendors\bin. Por 
+exemplo, para mostrar a versão do PHPUnit instalada pelo Composer:
+    vendor\bin\phpunit --version
