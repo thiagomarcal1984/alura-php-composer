@@ -127,3 +127,34 @@ composer.json incluindo o seguinte código:
 O Composer só vai conhecer as configurações de PSR-4 novas depois que o
 seguinte comando for executado:
     composer dumpautoload
+
+O Composer também pode associar uma classe a um caminho específico. Para isso,
+inclua o seguinte codigo no composer.json e execute o composer dumpautoload:
+    "autoload": {
+        "classmap": [
+            "./Teste.php"
+        ],
+        "psr-4": {
+            ... código anterior do PSR-4
+        }
+    }
+
+Ao executar o comando, o arquivo vendor/composer/autoload_classmap.php é
+atualizado.
+
+Se o arquivo listado dentro do classmap tiver mais de uma classe, todas as 
+classes serão carregadas no autoload_classmap.php.
+
+É possível também definir quais arquivos serão sempre carregados pelo Composer.
+Para isso, insira o grupo files em composer.json e repita o dumpautoload:
+
+
+Em resumo, o grupo autoload no composer.json tem 3 listas:
+    1) psr-4: mostra quais arquivos são carregados a partir de namespaces;
+    2) classmap: mostra os arquivos a partir dos quais classes são carregadas;
+    3) files: mostra quais arquivos tem funções que podem ser reusadas.
+
+    PSR-4 é o caminho mais natural de importar classes a partir de namespaces.
+    Classmap e Files facilitam a importação de classes e funções e são úteis
+    para importar código de projetos legados. Em files as classes são carregadas
+    mesmo que não sejam usadas, já em classmap o carregamento é sob demanda.
