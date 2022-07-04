@@ -180,3 +180,22 @@ Por exemplo, para avaliar se um arquivo PHP segue a PSR-12, use o comando:
     vendor\bin\phpcs --standard=PSR12 src
 
 O arquivo Buscador.php foi alterado para atender à PSR-12.
+
+
+PHAN é uma ferramenta de análise estática de código PHP. Para verificar o 
+código, é necesário fazer algumas configurações usando o arquivo config.php
+dentro do diretório .phan na raiz do composer. Há um array chamado 
+directory_list, onde são listados os diretórios que serão analisados pelo PHAN.
+
+O comando abaixo analisa o código:
+    vendor\bin\phan --allow-polyfill-parser 
+        # O código acima varre toda a pasta atual.
+    ou
+    vendor\bin\phan --allow-polyfill-parser .\src\Buscador.php
+
+Rodando esse comando, obtivemos a seguinte saída: 
+src\Buscador.php:29 PhanUndeclaredClassMethod Call to method getBody from 
+undeclared class \Psr\Http\Message\ResponseInterface 
+(Did you mean to configure a stub with 
+https://github.com/phan/phan/wiki/How-To-Use-Stubs#internal-stubs or to enable
+the extension providing the class.)
