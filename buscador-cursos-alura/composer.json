@@ -28,6 +28,9 @@
         "phan/phan": "^5.3"
     },
     "scripts": {
+        "ls": "dir",
+        "limpar-cache": "rmdir /s/q cache",
+        "say-hello": "Alura\\BuscadorDeCursos\\Buscador::sayHello",
         "testar": "phpunit tests/StackTest.php",
         "cs": "phpcs --standard=PSR12 src/", 
         "phan": "phan --allow-polyfill-parser",

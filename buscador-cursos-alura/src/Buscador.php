@@ -38,4 +38,9 @@ class Buscador
         }
         return $cursos;
     }
+
+    public static function sayHello()
+    {
+        echo "Hey, Lo!";
+    }
 }

@@ -234,3 +234,15 @@ composer.json as scripts-descriptions:
     "scripts-descriptions": {
         "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT."
     }
+
+Os scripts no composer não se limitam aos comandos da pasta vendor/bin. Você
+pode usar comandos do sistema operacional nos scripts também. Por exemplo: para
+limpar a pasta de cache, você pode criar o seguinte script em composer.json:
+    "scripts": {
+        "limpar-cache": "rmdir /s/q cache"
+    }
+
+É possível também executar algum código PHP nos scripts, usando namespaces:
+    "scripts": {
+        "say-hello": "Alura\\BuscadorDeCursos\\Buscador::sayHello",
+    }
