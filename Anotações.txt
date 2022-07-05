@@ -246,3 +246,16 @@ limpar a pasta de cache, você pode criar o seguinte script em composer.json:
     "scripts": {
         "say-hello": "Alura\\BuscadorDeCursos\\Buscador::sayHello",
     }
+
+É possível disparar scripts automaticamente a partir dos comandos padrão do
+composer (como o update ou o install). Veja a lista de comandos no site:
+https://getcomposer.org/doc/articles/scripts.md#command-events
+
+No exemplo abaixo, o comando testar será executado logo depois que o comando 
+update for executado (composer update):
+    "scripts": {
+        "testar": "phpunit tests/StackTest.php",
+        "post-update-cmd": [
+            "@testar"
+        ]
+    }, 

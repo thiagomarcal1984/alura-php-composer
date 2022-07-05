@@ -38,6 +38,9 @@
             "@phan",
             "@cs",
             "@testar"
+        ],
+        "post-update-cmd": [
+            "@testar"
         ]
     }, 
     "scripts-descriptions": {
