@@ -30,6 +30,14 @@
     "scripts": {
         "testar": "phpunit tests/StackTest.php",
         "cs": "phpcs --standard=PSR12 src/", 
-        "phan": "phan --allow-polyfill-parser"
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@testar"
+        ]
+    }, 
+    "scripts-descriptions": {
+        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT."
     }
 }

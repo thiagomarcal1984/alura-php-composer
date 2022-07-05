@@ -199,3 +199,38 @@ undeclared class \Psr\Http\Message\ResponseInterface
 (Did you mean to configure a stub with 
 https://github.com/phan/phan/wiki/How-To-Use-Stubs#internal-stubs or to enable
 the extension providing the class.)
+
+
+O usuário pode batizar um comando complexo com um nome qualquer no Composer.
+Veja como é simples definir um script no composer.json:
+    "scripts": {
+        "testar": "phpunit tests/StackTest.php"
+    }
+
+E para executar o script "testar", use composer <nome do script>:
+    composer testar
+
+É possível fazer uma macro de scripts. Para isso, basta acrescentar um script
+que contenha uma lista de comandos prefixados com arroba:
+    "scripts": {
+        "testar": "phpunit tests/StackTest.php",
+        "cs": "phpcs --standard=PSR12 src/", 
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@testar"
+        ]
+    }
+
+
+Para mostrar todos os comandos disponíveis no composer (inclusive as 
+personalizadas), execute o comando:
+    composer list
+
+Os comandos personalizados exibem um texto padrão "Runs the <script> script as 
+defined in composer.json.". Para mudar o texto padrão, acrescente no 
+composer.json as scripts-descriptions:
+    "scripts-descriptions": {
+        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT."
+    }
