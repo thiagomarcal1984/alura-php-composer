@@ -259,3 +259,23 @@ update for executado (composer update):
             "@testar"
         ]
     }, 
+
+
+O composer tem um padrão para versionar os packages: 
+https://getcomposer.org/doc/articles/versions.md
+
+Visite o site de versionamento semântico: https://semver.org/lang/pt-BR/
+Padrão: vx.y.z, (versão MAJOR.MINOR.PATCH) onde:
+    x => No. que indica que há quebra de compatibilidade com versão anterior.
+    y => Acréscimo ou alteração que não quebra a compatibilidade.
+    z => Correção de função existente.
+
+Busca de versões dentro do composer:
+    O hífen serve para indicar uma faixa de versões: 1.0-2.0
+    O asterisco indica curinga: 1.0.* (qualquer versão até minor version)
+    O til é operador de próxima versão significativa, inclusive as que quebram
+        a compatibilidade  de acordo com o SemVer:
+            ~1.2 seleciona 1.2 ou 1.3 ou mesmo 2.0.
+    O caret é operador de próxima versão significativa, mas sem quebrar
+        a compatibilidade com a versão escolhida:
+            ^1.2 seleciona 1.3, 1.4, 1.5... mas não seleciona 2.0.
