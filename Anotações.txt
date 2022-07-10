@@ -287,3 +287,16 @@ Composer possa baixá-los como dependência. Lembre-se de usar o versionamento
 semântico para garantir a compatibilidade de versões quando outros 
 desenvolvedores baixarem a sua dependência. É bom que você coloque informações
 de licença de uso e o README.md no seu projeto.
+
+
+Coloque o código a seguir na primeira linha do arquivo PHP para torná-lo 
+executável dentro da pasta bin da dependência:
+    #!/usr/bin/env php
+
+Onde: 
+    #!  => Diz que o caminho a seguir contém o programa que vai ler o arquivo.
+    /usr/bin/env php => Caminho do programa que vai ler o arquivo.
+
+O Composer cria um arquivo .bat a partir do PHP que você indica como binário, 
+que pode ser executado no Windows. Em Linux, o arquivo binário pode ser 
+executado diretamente.
