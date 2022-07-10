@@ -279,3 +279,11 @@ Busca de versões dentro do composer:
     O caret é operador de próxima versão significativa, mas sem quebrar
         a compatibilidade com a versão escolhida:
             ^1.2 seleciona 1.3, 1.4, 1.5... mas não seleciona 2.0.
+
+
+Você pode logar no Packagist usando a sua conta do Github. Depois de logar no 
+Packagist, você pode inserir links de projetos do Github, de maneira que o 
+Composer possa baixá-los como dependência. Lembre-se de usar o versionamento
+semântico para garantir a compatibilidade de versões quando outros 
+desenvolvedores baixarem a sua dependência. É bom que você coloque informações
+de licença de uso e o README.md no seu projeto.
